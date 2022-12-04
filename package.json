@@ -1,5 +1,5 @@
 {
-  "name": "simple-cal-app",
+  "name": "cli-atm-machine",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,9 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node bin/index.js"
   },
-  "bin": {
-    "simple-cal-app": "bin/index.js"
-  },
+  "bin": "bin/index.js",
   "keywords": [],
   "author": "",
   "license": "ISC",

@@ -1,7 +1,6 @@
 #! /usr/bin/env node
 
 import inquirer from "inquirer";
-import chalkAnimation from "chalk-animation";
 import chalk from "chalk";
 import { createSpinner } from "nanospinner";
 import figlet from "figlet";
@@ -49,7 +48,7 @@ const welcome = async function () {
   });
   await wait();
 
-  console.log(`${chalk.yellow(`Enter your 4 digit PIN`)}\n`);
+  console.log(`${chalk.yellow(`Enter your 4 digit PIN`)}\ntry demo pin: 1234`);
 };
 
 // Validates user pin
@@ -107,7 +106,7 @@ const options = async function () {
       "(1) Withdraw",
       "(2) Bill-Payment",
       "(3) Transfer",
-      "(4) Check Balance",
+      "(4) Balance Inquiry",
     ],
   });
   userOption = promptOptions.options;
@@ -206,8 +205,6 @@ const handleTransfers = async function (amount: number) {
     });
 };
 
-// show users balance
-
 // handles the inquirer Prompt options
 const handleOptions = async function (option: string) {
   if (option === "(1) Withdraw") {
@@ -252,7 +249,7 @@ const handleOptions = async function (option: string) {
     await handleTransfers(transferAmount.Amount);
   }
 
-  if (option === "(4) Check Balance") {
+  if (option === "(4) Balance Inquiry") {
     console.log(
       `${chalk.yellow(`Your Balance: Rs.${chalk.yellow(user1.balance)}`)}\n`
     );
